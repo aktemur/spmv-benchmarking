@@ -1,0 +1,3 @@
+[submodule "MMMatrixIO"]
+	path = MMMatrixIO
+	url = https://github.com/ozusrl/MMMatrixIO.git
