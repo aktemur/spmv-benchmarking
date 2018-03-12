@@ -1,3 +1,6 @@
 [submodule "MMMatrixIO"]
 	path = MMMatrixIO
 	url = https://github.com/ozusrl/MMMatrixIO.git
+[submodule "docopt.cpp"]
+	path = docopt.cpp
+	url = https://github.com/docopt/docopt.cpp

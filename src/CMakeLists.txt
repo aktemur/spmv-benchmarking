@@ -39,3 +39,12 @@ find_library(MMMatrixIO
 target_link_libraries(spmv_benchmarking ${MMMatrixIO})
 target_include_directories(spmv_benchmarking PUBLIC ${CMAKE_SOURCE_DIR}/../MMMatrixIO/src)
 
+#
+# docopt library
+#
+include_directories(${CMAKE_SOURCE_DIR}/../docopt.cpp)
+find_library(docopt
+        docopt
+        PATHS ${CMAKE_SOURCE_DIR}/../lib/docopt.cpp
+        )
+target_link_libraries(spmv_benchmarking ${docopt})
