@@ -16,6 +16,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${dir}")
 
 
 set(SOURCE_FILES
+    stub_spmv.cpp
     spmv_registry.cpp
     main.cpp)
 

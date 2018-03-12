@@ -21,4 +21,14 @@ public:
 
 };
 
+class StubSpmv : public SpmvMethod {
+public:
+
+    static const std::string name ;
+    virtual void init(MATRIX *matrix);
+
+    virtual void compute(double *input_vector, double *output_vector, unsigned int size);
+
+};
+
 #endif //SPMV_BENCHMARKING_SPMV_H
