@@ -1,13 +1,10 @@
 #ifndef SPMV_BENCHMARKING_SPMV_REGISTRY_H
 #define SPMV_BENCHMARKING_SPMV_REGISTRY_H
 
-
 #include <list>
 #include <string>
 #include <map>
 #include "spmv.h"
-
-
 
 class SpmvMethodCreator {
 public:
@@ -40,8 +37,6 @@ public:
     SpmvMethodCreatorImpl(std::string name);
     SpmvMethod *getMethod();
 };
-
-/* template functions in header */
 
 template<class TSpmvMethod>
 SpmvMethodCreatorImpl<TSpmvMethod>::SpmvMethodCreatorImpl(std::string name) {

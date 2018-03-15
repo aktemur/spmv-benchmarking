@@ -3,7 +3,6 @@
 #include "parse_options.h"
 #include "mmmatrix.hpp"
 
-
 std::unique_ptr<MATRIX> loadMatrix(const std::string filename);
 
 int main(int argc, const char *argv[]) {

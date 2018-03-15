@@ -2,7 +2,6 @@
 #include "docopt.h"
 #include "parse_options.h"
 
-
 static const char USAGE[] =
 R"(OzU SRL SpMV Benchmarking.
   Usage:

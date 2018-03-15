@@ -2,9 +2,7 @@
 #define SPMV_BENCHMARKING_SPMV_H
 
 #include <string>
-
 #include "mmmatrix.hpp"
-
 
 #define ELEMENT_TYPE double
 #define MATRIX thundercat::MMMatrix <ELEMENT_TYPE>
@@ -17,7 +15,6 @@ public:
     virtual void init(std::unique_ptr<MATRIX>& matrix) = 0;
 
     virtual void compute(double *input_vector, double *output_vector, unsigned int size) = 0;
-
 
 };
 

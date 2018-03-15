@@ -3,8 +3,6 @@
 #include "spmv.h"
 #include "spmv_registry.h"
 
-
-
 const std::string StubSpmv::name = "stub";
 
 void StubSpmv::init(std::unique_ptr<MATRIX>& matrix) {

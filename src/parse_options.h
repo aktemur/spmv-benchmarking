@@ -12,7 +12,6 @@ struct CliOptions {
 
 };
 
-
 std::unique_ptr<CliOptions> parseCliOptions(int argc, const char *argv[]);
 
 #endif //SPMV_BENCHMARKING_PARSE_OPTIONS_H
