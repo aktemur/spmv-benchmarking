@@ -7,7 +7,7 @@
 
 const std::string StubSpmv::name = "stub";
 
-void StubSpmv::init(MATRIX * matrix) {
+void StubSpmv::init(std::unique_ptr<MATRIX>& matrix) {
   std::cout << "Stub implementation initializing"<< std::endl;
 }
 
