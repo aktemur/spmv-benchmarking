@@ -16,14 +16,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${dir}")
 
 
 set(SOURCE_FILES
-    stub_spmv.cpp
+    main.cpp
     spmv_registry.cpp
-    main.cpp)
+    parse_options.cpp
+    stub_spmv.cpp)
 
 
 set(HEADER_FILES
     spmv.h
-    spmv_registry.h)
+    spmv_registry.h
+    parse_options.h)
 
 
 add_executable(spmv_benchmarking ${SOURCE_FILES})
