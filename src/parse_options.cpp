@@ -24,7 +24,8 @@ void dumpOptions(std::unique_ptr<CliOptions>& options) {
             "method     : " << options->method << std::endl <<
             "threads    : " << options->threads << std::endl <<
             "iters      : " << options->iters << std::endl <<
-            "debug      : " << (options->debug ? "true" : "false" )<< std::endl;
+            "debug      : " << (options->debug ? "true" : "false" )<< std::endl <<
+            "==================" << std::endl << std::endl;
 
 }
 
