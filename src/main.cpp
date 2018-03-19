@@ -24,13 +24,17 @@ int main(int argc, const char *argv[]) {
   method->init(matrix, cliOptions->threads);
 
   auto computeStart = std::chrono::high_resolution_clock::now();
-  method->compute(nullptr, nullptr,0);
+  for (int i = 0; i <cliOptions->iters; ++i) {
+    method->compute(nullptr, nullptr,0);
+  }
   auto computeEnd = std::chrono::high_resolution_clock::now();
 
 
   std::cout << "Reading Matrix       : " << deltaMicroseconds(initStart, readStart) << " us" << std::endl <<
                "Initializing Matrix  : " << deltaMicroseconds(computeStart, initStart) << " us" << std::endl <<
-               "Computing            : " << deltaMicroseconds(computeEnd, computeStart) << " us" << std::endl ;
+               "Computing            : " << cliOptions->iters << " iterations" <<std::endl <<
+               "    Total            : " << deltaMicroseconds(computeEnd, computeStart) << " us" << std::endl <<
+               "    Single Iteration : " << deltaMicroseconds(computeEnd, computeStart)/cliOptions->iters << " us" << std::endl;
 
   return 0;
 }
