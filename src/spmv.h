@@ -11,9 +11,9 @@
 class SpmvMethod {
 public:
 
-    const std::string name ;
+    const std::string name;
 
-    virtual void init(std::unique_ptr<MATRIX>& matrix, unsigned int threads) = 0;
+    virtual void init(std::unique_ptr<MATRIX > &matrix, unsigned int threads) = 0;
 
     virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector, unsigned int size) = 0;
 
@@ -22,12 +22,13 @@ public:
 class StubSpmv : public SpmvMethod {
 public:
 
-    static const std::string name ;
+    static const std::string name;
 
-    virtual void init(std::unique_ptr<MATRIX>& matrix, unsigned int threads);
+    virtual void init(std::unique_ptr<MATRIX > &matrix, unsigned int threads);
 
     virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector, unsigned int size);
 
 };
+
 
 #endif //SPMV_BENCHMARKING_SPMV_H

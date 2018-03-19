@@ -19,12 +19,14 @@ set(SOURCE_FILES
     main.cpp
     spmv_registry.cpp
     parse_options.cpp
+    plain_csr.cpp
     stub_spmv.cpp)
 
 
 set(HEADER_FILES
     spmv.h
     spmv_registry.h
+    plain_csr.h
     parse_options.h)
 
 
@@ -50,3 +52,14 @@ find_library(docopt
         PATHS ${CMAKE_SOURCE_DIR}/../lib/docopt.cpp
         )
 target_link_libraries(spmv_benchmarking ${docopt})
+
+##
+## OpenMP
+##
+find_package(OpenMP)
+if (OPENMP_FOUND)
+    add_definitions(-DOPENMP_EXISTS)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+    message(STATUS "System is " ${CMAKE_SYSTEM_NAME})
+endif()

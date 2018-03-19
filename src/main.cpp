@@ -23,9 +23,13 @@ int main(int argc, const char *argv[]) {
   auto initStart = std::chrono::high_resolution_clock::now();
   method->init(matrix, cliOptions->threads);
 
+
+  //
+  double *in = new double[matrix->N+1];
+  double *out = new double[matrix->N+1];
   auto computeStart = std::chrono::high_resolution_clock::now();
   for (int i = 0; i <cliOptions->iters; ++i) {
-    method->compute(nullptr, nullptr,0);
+    method->compute(in, out,0);
   }
   auto computeEnd = std::chrono::high_resolution_clock::now();
 
