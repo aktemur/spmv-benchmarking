@@ -30,9 +30,9 @@ int main(int argc, const char *argv[]) {
   auto computeEnd = std::chrono::high_resolution_clock::now();
 
 
-  std::cout << "Reading Matrix       : " << deltaMicroseconds(initStart, readStart) << "us" << std::endl <<
-               "Initializing Matrix  : " << deltaMicroseconds(computeStart, initStart) << "us" << std::endl <<
-               "Computing            : " << deltaMicroseconds(computeEnd, computeStart) << "us" << std::endl ;
+  std::cout << "Reading Matrix       : " << deltaMicroseconds(initStart, readStart) << " us" << std::endl <<
+               "Initializing Matrix  : " << deltaMicroseconds(computeStart, initStart) << " us" << std::endl <<
+               "Computing            : " << deltaMicroseconds(computeEnd, computeStart) << " us" << std::endl ;
 
 
   return 0;
