@@ -23,7 +23,7 @@ int main(int argc, const char *argv[]) {
   auto matrix = loadMatrix(cliOptions->mtxFile);
 
   auto initStart = std::chrono::high_resolution_clock::now();
-  method->init(matrix);
+  method->init(matrix, cliOptions->threads);
 
   auto computeStart = std::chrono::high_resolution_clock::now();
   method->compute(nullptr, nullptr,0);

@@ -5,8 +5,8 @@
 
 const std::string StubSpmv::name = "stub";
 
-void StubSpmv::init(std::unique_ptr<MATRIX>& matrix) {
-  std::cout << "Stub implementation initializing"<< std::endl;
+void StubSpmv::init(std::unique_ptr<MATRIX>& matrix, unsigned int threads) {
+  std::cout << "Stub implementation initializing with "<< threads << " threads" << std::endl;
 }
 
 void StubSpmv::compute(double *input_vector, double *output_vector, unsigned int size) {

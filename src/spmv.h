@@ -12,7 +12,7 @@ public:
 
     const std::string name ;
 
-    virtual void init(std::unique_ptr<MATRIX>& matrix) = 0;
+    virtual void init(std::unique_ptr<MATRIX>& matrix, unsigned int threads) = 0;
 
     virtual void compute(double *input_vector, double *output_vector, unsigned int size) = 0;
 
@@ -22,7 +22,8 @@ class StubSpmv : public SpmvMethod {
 public:
 
     static const std::string name ;
-    virtual void init(std::unique_ptr<MATRIX>& matrix);
+
+    virtual void init(std::unique_ptr<MATRIX>& matrix, unsigned int threads);
 
     virtual void compute(double *input_vector, double *output_vector, unsigned int size);
 
