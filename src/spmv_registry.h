@@ -8,7 +8,7 @@
 
 class SpmvMethodCreator {
 public:
-    virtual SpmvMethod *getMethod() = 0;
+    virtual std::unique_ptr<SpmvMethod> getMethod() = 0;
 };
 
 class SpmvMethodRegistry {
@@ -19,7 +19,7 @@ public:
 
     void add(SpmvMethodCreator *creator, std::string name);
 
-    SpmvMethod *getMethod(std::string name);
+    std::unique_ptr<SpmvMethod> getMethod(std::string name);
 
 
 private:
@@ -35,7 +35,7 @@ template<class TSpmvMethod>
 class SpmvMethodCreatorImpl : public SpmvMethodCreator {
 public:
     SpmvMethodCreatorImpl(std::string name);
-    SpmvMethod *getMethod();
+    std::unique_ptr<SpmvMethod> getMethod();
 };
 
 template<class TSpmvMethod>
@@ -45,8 +45,8 @@ SpmvMethodCreatorImpl<TSpmvMethod>::SpmvMethodCreatorImpl(std::string name) {
 }
 
 template<class TSpmvMethod>
-SpmvMethod* SpmvMethodCreatorImpl<TSpmvMethod>::getMethod() {
-  return new TSpmvMethod();
+std::unique_ptr<SpmvMethod> SpmvMethodCreatorImpl<TSpmvMethod>::getMethod() {
+  return std::unique_ptr<SpmvMethod>(new TSpmvMethod());
 }
 
 #define REGISTER_METHOD(CLASSNAME) \

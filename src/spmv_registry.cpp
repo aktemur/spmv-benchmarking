@@ -11,7 +11,7 @@ void SpmvMethodRegistry::add(SpmvMethodCreator * creator, std::string name) {
   registry[name] = creator;
 }
 
-SpmvMethod* SpmvMethodRegistry::getMethod(std::string name) {
+std::unique_ptr<SpmvMethod> SpmvMethodRegistry::getMethod(std::string name) {
   SpmvMethodCreator* creator;
   try {
     creator = registry.at(name); /* throws out_of_range if plugin unknown */
