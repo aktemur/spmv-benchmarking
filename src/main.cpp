@@ -24,9 +24,9 @@ int main(int argc, const char *argv[]) {
   method->init(matrix, cliOptions->threads);
 
 
-  //
-  double *in = new double[matrix->N+1];
-  double *out = new double[matrix->N+1];
+  double *in = new double[matrix->N];
+  double *out = new double[matrix->N];
+
   auto computeStart = std::chrono::high_resolution_clock::now();
   for (int i = 0; i <cliOptions->iters; ++i) {
     method->compute(in, out,0);
