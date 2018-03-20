@@ -15,7 +15,7 @@ public:
 
     virtual void init(std::unique_ptr<MATRIX > &matrix, unsigned int threads) = 0;
 
-    virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector, unsigned int size) = 0;
+    virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector) = 0;
 
 };
 
@@ -26,7 +26,7 @@ public:
 
     virtual void init(std::unique_ptr<MATRIX > &matrix, unsigned int threads);
 
-    virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector, unsigned int size);
+    virtual void compute(VECTOR_ELEMENT *input_vector, VECTOR_ELEMENT *output_vector);
 
 };
 

@@ -29,7 +29,7 @@ int main(int argc, const char *argv[]) {
 
   auto computeStart = std::chrono::high_resolution_clock::now();
   for (int i = 0; i <cliOptions->iters; ++i) {
-    method->compute(in, out,0);
+    method->compute(in, out);
   }
   auto computeEnd = std::chrono::high_resolution_clock::now();
 
